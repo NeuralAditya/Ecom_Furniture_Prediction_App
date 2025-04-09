@@ -104,26 +104,27 @@ ECOM_FURNITURE/
    pip install -r requirements.txt
    ```
 
-2. Train the model (optional):
+2. Create these folders and files:
+   ```bash
+   create model folder
+   create model.pkl & tfidf.pkl
+   keep both files empty
+   (req to save trained models)
+   ```
+
+3. Train the model:
    ```bash
    python train_model.py
    ```
 
-3. Run the Flask app:
+4. Run the Flask app:
    ```bash
    python app.py
    ```
 
-4. Open browser at:
+5. Open browser at:
    ```
    http://localhost:5000
-   ```
-5. Create these folders and files:
-   ```
-   create model folder
-   create model.pkl & tfidf.pkl
-   keep both files empty
-   (used to save trained models)
    ```
 ---
 
