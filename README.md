@@ -118,7 +118,13 @@ ECOM_FURNITURE/
    ```
    http://localhost:5000
    ```
-
+5. Create these folders and files:
+   ```
+   create model folder
+   create model.pkl & tfidf.pkl
+   keep both files empty
+   (used to save trained models)
+   ```
 ---
 
 ## 🧪 Example Prediction Flow
