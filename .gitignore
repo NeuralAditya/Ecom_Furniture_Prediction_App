@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pkl
+/static/graphs/*
+.env
+.vscode/
+.idea/
+.DS_Store

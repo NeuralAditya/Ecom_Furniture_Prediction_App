@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container result-box">
+        <h2>📈 Predicted Items Sold:</h2>
+        <p class="prediction">{{ prediction }}</p>
+
+        {% if graph %}
+        <div class="graph-box">
+            <h3>🔍 Prediction Overview for This Product</h3>
+            <img src="{{ url_for('static', filename='graphs/' + graph) }}" alt="Predicted Sales for This Product"
+                 style="width: 100%; max-width: 400px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin: 20px auto;">
+        </div>
+
+        <div class="graph-box">
+            <h3>🧠 Prediction Breakdown</h3>
+            <img src="{{ url_for('static', filename='graphs/prediction_breakdown.png') }}" alt="Prediction Breakdown"
+                 style="width: 100%; max-width: 400px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin: 20px auto;">
+        </div>
+
+        <div class="graph-box">
+            <h3>💸 Price Impact Simulation</h3>
+            <img src="{{ url_for('static', filename='graphs/price_impact.png') }}" alt="Price Impact"
+                 style="width: 100%; max-width: 400px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin: 20px auto;">
+        </div>
+        {% endif %}
+
+        <a href="/" class="back-btn">← Back to Form</a>
+        <a href="{{ url_for('download_pdf', prediction=prediction) }}" class="pdf-btn" target="_blank">📄 Download as PDF</a>
+    </div>
+
+    <div class="container graph-box">
+        <h3>📊 Visual Analysis (Dataset Level)</h3>
+        <div class="graph-grid">
+            <img src="{{ url_for('static', filename='graphs/feature_importance.png') }}" alt="Feature Importance">
+            <img src="{{ url_for('static', filename='graphs/predicted_vs_actual.png') }}" alt="Predicted vs Actual">
+            <img src="{{ url_for('static', filename='graphs/price_vs_predicted.png') }}" alt="Price vs Predicted Sales">
+            <img src="{{ url_for('static', filename='graphs/distribution_sold.png') }}" alt="Distribution of Sold">
+            <img src="{{ url_for('static', filename='graphs/sales_by_tag.png') }}" alt="Sales by Shipping Tag">
+            <img src="{{ url_for('static', filename='graphs/discount_vs_sold.png') }}" alt="Discount % vs Sold">
+            <img src="{{ url_for('static', filename='graphs/top_keywords.png') }}" alt="Top Product Keywords">
+            <img src="{{ url_for('static', filename='graphs/price_distribution.png') }}" alt="Price Distribution">
+            <img src="{{ url_for('static', filename='graphs/sold_by_price_bracket.png') }}" alt="Sold by Price Bracket">
+            <img src="{{ url_for('static', filename='graphs/sales_by_discount_bin.png') }}" alt="Sold by Discount Bin">
+            <img src="{{ url_for('static', filename='graphs/tag_text_breakdown.png') }}" alt="Tag Text Breakdown">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 <a href="https://www.linkedin.com/in/NeuralAditya" target="_blank">Aditya Arora</a>. All rights reserved.</p>
+    </footer>
+</body>
+</html>

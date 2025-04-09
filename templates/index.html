@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Furniture Sales Prediction</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Furniture Sales Prediction</h1>
+        <h2>Enter Product Details</h2>
+        <form method="POST" action="/predict">
+            <label for="productTitle">Title:</label>
+            <input type="text" name="productTitle" required>
+
+            <label for="originalPrice">Original Price:</label>
+            <input type="text" name="originalPrice" required>
+
+            <label for="price">Price:</label>
+            <input type="text" name="price" required>
+
+            <label for="tagText">Tag Text:</label>
+            <select name="tagText">
+                <option value="Free shipping">Free shipping</option>
+                <option value="+Shipping: $5.09">+Shipping: $5.09</option>
+                <option value="others">Others</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 <a href="https://www.linkedin.com/in/NeuralAditya" target="_blank">Aditya Arora</a>. All rights reserved.</p>
+    </footer>
+</body>
+</html>
